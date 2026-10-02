@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cardápio da Barraca do Baiano. Monte seu pedido e envie pelo WhatsApp.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; frame-ancestors 'none';">
+  <title>Cardápio — Barraca do Baiano</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header solid" data-header>
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="Barraca do Baiano - início">
+        <img src="assets/images/logo.webp" alt="Logo Barraca do Baiano" width="58" height="58">
+        <span>Barraca do Baiano</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Navegação principal" data-nav>
+        <a href="index.html">Início</a>
+        <a class="active" href="cardapio.html">Cardápio</a>
+        <a href="index.html#contato">Contato</a>
+        <button class="nav-order cart-open" type="button">Pedido <span class="cart-badge" data-cart-count>0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="menu-page">
+    <section class="menu-hero">
+      <div class="shell menu-hero-inner">
+        <div>
+          <p class="kicker">cardápio</p>
+          <h1>Monte seu pedido.</h1>
+          <p>Escolha os itens, retire ingredientes se quiser e mande a mensagem pronta para o WhatsApp.</p>
+        </div>
+        <img src="assets/images/logo.webp" alt="Barraca do Baiano" width="220" height="220">
+      </div>
+    </section>
+
+    <section class="section menu-section">
+      <div class="shell">
+        <div class="menu-toolbar" role="navigation" aria-label="Categorias do cardápio" data-category-list></div>
+        <div class="menu-groups" data-menu-groups></div>
+      </div>
+    </section>
+  </main>
+
+  <button class="mobile-cart cart-open" type="button" aria-label="Abrir pedido">
+    <span>Ver pedido</span>
+    <strong data-mobile-total>R$ 0,00</strong>
+    <span class="cart-badge" data-cart-count>0</span>
+  </button>
+
+  <div class="drawer-backdrop" data-drawer-backdrop hidden></div>
+  <aside class="cart-drawer" aria-label="Seu pedido" aria-hidden="true" data-cart-drawer>
+    <div class="drawer-head">
+      <div><p class="kicker">seu pedido</p><h2>Confira tudo.</h2></div>
+      <button class="drawer-close" type="button" aria-label="Fechar pedido" data-drawer-close>×</button>
+    </div>
+    <div class="drawer-items" data-cart-items></div>
+    <div class="drawer-note">
+      <label for="orderNote">Observação geral</label>
+      <textarea id="orderNote" maxlength="240" placeholder="Ex.: separar os molhos, retirar algum item..." data-order-note></textarea>
+    </div>
+    <div class="drawer-total"><span>Total</span><strong data-cart-total>R$ 0,00</strong></div>
+    <p class="drawer-warning">O pedido será aberto no WhatsApp para você conferir e enviar. Valores e disponibilidade podem ser confirmados pela lanchonete.</p>
+    <button class="btn btn-primary btn-full" type="button" data-send-whatsapp>Enviar pedido pelo WhatsApp</button>
+    <button class="clear-cart" type="button" data-clear-cart>Limpar pedido</button>
+  </aside>
+
+  <dialog class="product-dialog" data-product-dialog>
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" aria-label="Fechar" data-product-close>×</button>
+      <div class="dialog-copy">
+        <p class="kicker" data-dialog-category></p>
+        <h2 data-dialog-name></h2>
+        <p class="dialog-description" data-dialog-description></p>
+        <strong class="dialog-price" data-dialog-price></strong>
+      </div>
+      <div class="options-block" data-removal-block>
+        <h3>Quer retirar algo?</h3>
+        <p>Marque somente o que você não quer no lanche.</p>
+        <div class="option-grid" data-removal-options></div>
+      </div>
+      <div class="options-block" data-addition-block>
+        <h3>Acréscimos</h3>
+        <div class="option-grid" data-addition-options></div>
+      </div>
+      <div class="options-block">
+        <label class="field-label" for="itemNote">Observação deste item</label>
+        <textarea id="itemNote" maxlength="160" placeholder="Ex.: bem passado" data-item-note></textarea>
+      </div>
+      <div class="dialog-footer">
+        <div class="qty-control" aria-label="Quantidade">
+          <button type="button" data-dialog-qty-minus aria-label="Diminuir">−</button>
+          <span data-dialog-qty>1</span>
+          <button type="button" data-dialog-qty-plus aria-label="Aumentar">+</button>
+        </div>
+        <button class="btn btn-dark dialog-add" type="button" data-dialog-add>Adicionar <span data-dialog-total></span></button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer compact">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo.webp" alt="Logo Barraca do Baiano" width="64" height="64">
+        <div><strong>Barraca do Baiano</strong><span>Seg, ter e qui–dom · 18h às 00h</span></div>
+      </div>
+      <a class="footer-whatsapp" href="https://wa.me/558491217386" target="_blank" rel="noopener noreferrer">+55 84 9121-7386</a>
+    </div>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/menu.js" defer></script>
+</body>
+</html>

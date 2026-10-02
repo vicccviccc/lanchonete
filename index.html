@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cardápio e pedidos da Barraca do Baiano pelo WhatsApp.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; frame-ancestors 'none';">
+  <title>Barraca do Baiano</title>
+  <link rel="icon" href="assets/images/logo.webp" type="image/webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <div class="shell nav-wrap">
+      <a class="brand" href="index.html" aria-label="Barraca do Baiano - início">
+        <img src="assets/images/logo.webp" alt="Logo Barraca do Baiano" width="58" height="58">
+        <span>Barraca do Baiano</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Navegação principal" data-nav>
+        <a class="active" href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="#contato">Contato</a>
+        <a class="nav-order" href="cardapio.html">Fazer pedido</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-home">
+      <img class="hero-photo" src="assets/images/barraca.webp" alt="Barraca do Baiano durante o funcionamento">
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="shell hero-content">
+        <img class="hero-logo" src="assets/images/logo.webp" alt="Barraca do Baiano" width="420" height="420">
+        <div class="hero-copy">
+          <p class="kicker light">cardápio digital</p>
+          <h1>Seu pedido começa aqui.</h1>
+          <p>Escolha seu lanche, personalize o pedido e envie tudo pronto pelo WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="cardapio.html">Ver cardápio</a>
+            <a class="btn btn-ghost-light" href="#funcionamento">Horários</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section">
+      <div class="shell split-feature">
+        <div class="photo-panel">
+          <img src="assets/images/sanduiches-reais.webp" alt="Sanduíches reais da Barraca do Baiano" loading="lazy">
+        </div>
+        <div class="feature-copy">
+          <p class="kicker">do seu jeito</p>
+          <h2>Escolha, personalize e mande no WhatsApp.</h2>
+          <p>O site não cria cadastro nem guarda seu pedido em servidor. Você monta tudo aqui e confere a mensagem antes de enviar no WhatsApp.</p>
+          <a class="text-link" href="cardapio.html">Abrir o cardápio <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-preview">
+      <div class="shell">
+        <div class="section-title-row">
+          <div>
+            <p class="kicker">cardápio</p>
+            <h2>Os lanches da Barraca.</h2>
+          </div>
+          <a class="btn btn-dark" href="cardapio.html">Ver tudo</a>
+        </div>
+
+        <div class="preview-grid">
+          <article class="preview-card">
+            <div class="preview-media product-photo-placeholder">
+              <img src="assets/images/logo.webp" alt="" aria-hidden="true">
+              <span>foto do produto</span>
+            </div>
+            <div class="preview-body"><h3>X-Baiano</h3><strong>R$ 14,00</strong></div>
+          </article>
+          <article class="preview-card">
+            <div class="preview-media product-photo-placeholder">
+              <img src="assets/images/logo.webp" alt="" aria-hidden="true">
+              <span>foto do produto</span>
+            </div>
+            <div class="preview-body"><h3>X-Frango</h3><strong>R$ 19,00</strong></div>
+          </article>
+          <article class="preview-card">
+            <div class="preview-media product-photo-placeholder">
+              <img src="assets/images/logo.webp" alt="" aria-hidden="true">
+              <span>foto do produto</span>
+            </div>
+            <div class="preview-body"><h3>X-Tudo</h3><strong>R$ 22,00</strong></div>
+          </article>
+        </div>
+        <p class="photo-note">As fotos individuais dos produtos entram aqui quando você enviar as imagens de cada lanche.</p>
+      </div>
+    </section>
+
+    <section class="section info-section" id="funcionamento">
+      <div class="shell info-grid">
+        <div class="info-intro">
+          <p class="kicker">funcionamento</p>
+          <h2>Aberto à noite.</h2>
+          <p>Confira os horários antes de enviar o pedido.</p>
+        </div>
+        <div class="hours-card">
+          <div class="hours-row"><span>Segunda</span><strong>18h — 00h</strong></div>
+          <div class="hours-row"><span>Terça</span><strong>18h — 00h</strong></div>
+          <div class="hours-row closed"><span>Quarta</span><strong>Fechado</strong></div>
+          <div class="hours-row"><span>Quinta</span><strong>18h — 00h</strong></div>
+          <div class="hours-row"><span>Sexta</span><strong>18h — 00h</strong></div>
+          <div class="hours-row"><span>Sábado</span><strong>18h — 00h</strong></div>
+          <div class="hours-row"><span>Domingo</span><strong>18h — 00h</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div class="shell contact-box">
+        <div>
+          <p class="kicker light">contato</p>
+          <h2>Fale com a Barraca do Baiano.</h2>
+          <p>Para pedidos, monte seu carrinho no cardápio. Para falar diretamente, use o WhatsApp.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-white" href="https://wa.me/558491217386" target="_blank" rel="noopener noreferrer">Abrir WhatsApp</a>
+          <a class="btn btn-outline-light" href="https://maps.app.goo.gl/Zz4Qt9jeWU53BLaF8" target="_blank" rel="noopener noreferrer">Como chegar</a>
+          <span class="phone-display">+55 84 9121-7386</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo.webp" alt="Logo Barraca do Baiano" width="72" height="72">
+        <div><strong>Barraca do Baiano</strong><span>Cardápio e pedidos pelo WhatsApp</span></div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="#contato">Contato</a>
+        <a href="https://maps.app.goo.gl/Zz4Qt9jeWU53BLaF8" target="_blank" rel="noopener noreferrer">Localização</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/common.js" defer></script>
+</body>
+</html>
