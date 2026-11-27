@@ -1,5 +1,6 @@
 'use strict';
 
+// dados de contato usados no cardapio
 const SITE_CONFIG = Object.freeze({
   whatsapp: '558491217386',
   whatsappDisplay: '+55 84 9121-7386',
