@@ -130,7 +130,7 @@ function renderMenu() {
 function addSimpleProduct(product) {
   const cart = loadCart();
   const match = cart.find(item => item.productId === product.id && !item.removed.length && !item.extras.length && !item.note);
-  if (match) match.qty += 1;
+  if (match) match.qty = Math.min(20, match.qty + 1);
   else cart.push({
     lineId: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`,
     productId: product.id,
@@ -284,7 +284,7 @@ function changeQty(lineId, delta) {
   const cart = loadCart();
   const item = cart.find(line => line.lineId === lineId);
   if (!item) return;
-  item.qty += delta;
+  item.qty = Math.min(20, item.qty + delta);
   saveCart(item.qty <= 0 ? cart.filter(line => line.lineId !== lineId) : cart);
 }
 
