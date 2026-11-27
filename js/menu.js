@@ -308,7 +308,9 @@ function closeDrawer() {
   drawer.classList.remove('open');
   drawer.setAttribute('aria-hidden', 'true');
   backdrop.classList.remove('show');
-  setTimeout(() => { backdrop.hidden = true; }, 180);
+  setTimeout(() => {
+    if (!drawer.classList.contains('open')) backdrop.hidden = true;
+  }, 180);
   document.body.classList.remove('drawer-open');
 }
 
