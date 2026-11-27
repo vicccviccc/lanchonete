@@ -145,6 +145,7 @@ function addSimpleProduct(product) {
   openDrawer();
 }
 
+// abre as opcoes de ingredientes e acrescimos do lanche
 function openProductDialog(product) {
   selectedProduct = product;
   selectedQty = 1;
@@ -188,12 +189,14 @@ function openProductDialog(product) {
   dialog.showModal();
 }
 
+// pega apenas os acrescimos marcados pelo cliente
 function dialogExtras() {
   return [...document.querySelectorAll('[data-addition]:checked')]
     .map(input => EXTRA_OPTIONS.find(extra => extra.id === input.value))
     .filter(Boolean);
 }
 
+// recalcula o valor quando muda a quantidade ou algum acrescimo
 function updateDialogTotal() {
   if (!selectedProduct) return;
   const extraValue = dialogExtras().reduce((sum, extra) => sum + extra.price, 0);
