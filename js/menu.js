@@ -11,7 +11,18 @@ let selectedQty = 1;
 function loadCart() {
   try {
     const parsed = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter(item =>
+      item && typeof item.lineId === 'string' &&
+      typeof item.productId === 'string' &&
+      typeof item.name === 'string' &&
+      Number.isInteger(item.qty) && item.qty > 0 &&
+      Number.isFinite(item.unitPrice) && item.unitPrice >= 0 &&
+      Array.isArray(item.removed) && item.removed.every(value => typeof value === 'string') &&
+      Array.isArray(item.extras) && item.extras.every(extra =>
+        extra && typeof extra.name === 'string' && Number.isFinite(extra.price) && extra.price >= 0
+      ) && typeof item.note === 'string'
+    );
   } catch {
     return [];
   }
