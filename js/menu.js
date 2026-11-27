@@ -7,6 +7,7 @@ const money = value => new Intl.NumberFormat('pt-BR', { style: 'currency', curre
 let selectedProduct = null;
 let selectedQty = 1;
 
+// recupera o pedido salvo no navegador
 function loadCart() {
   try {
     const parsed = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
@@ -16,11 +17,13 @@ function loadCart() {
   }
 }
 
+// salva o pedido e atualiza a tela
 function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
   renderCart();
 }
 
+// calcula o total usando o preco de cada item e a quantidade
 function cartTotal(cart = loadCart()) {
   return cart.reduce((sum, item) => sum + item.unitPrice * item.qty, 0);
 }
