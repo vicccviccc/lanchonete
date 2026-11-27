@@ -314,6 +314,7 @@ function closeDrawer() {
   document.body.classList.remove('drawer-open');
 }
 
+// organiza os itens e as observacoes em uma mensagem de texto
 function buildWhatsappMessage() {
   const cart = loadCart();
   if (!cart.length) return '';
@@ -336,6 +337,7 @@ function buildWhatsappMessage() {
   return lines.join('\n');
 }
 
+// abre o whatsapp com a mensagem pronta para o cliente enviar
 function sendWhatsapp() {
   const message = buildWhatsappMessage();
   if (!message) {
