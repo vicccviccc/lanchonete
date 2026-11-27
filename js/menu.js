@@ -350,6 +350,9 @@ function sendWhatsapp() {
 }
 
 function wireEvents() {
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !document.querySelector('[data-product-dialog]')?.open && document.querySelector('[data-cart-drawer]')?.classList.contains('open')) closeDrawer();
+  });
   document.querySelectorAll('.cart-open').forEach(button => button.addEventListener('click', openDrawer));
   document.querySelector('[data-drawer-close]')?.addEventListener('click', closeDrawer);
   document.querySelector('[data-drawer-backdrop]')?.addEventListener('click', closeDrawer);
