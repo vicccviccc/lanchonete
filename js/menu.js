@@ -126,6 +126,7 @@ function renderMenu() {
   });
 }
 
+// junta produtos iguais quando nao tem personalizacao
 function addSimpleProduct(product) {
   const cart = loadCart();
   const match = cart.find(item => item.productId === product.id && !item.removed.length && !item.extras.length && !item.note);
@@ -203,6 +204,7 @@ function updateDialogTotal() {
   document.querySelector('[data-dialog-total]').textContent = money((selectedProduct.price + extraValue) * selectedQty);
 }
 
+// guarda o lanche personalizado como um item separado
 function addDialogProduct() {
   if (!selectedProduct) return;
   const removed = [...document.querySelectorAll('[data-removal]:checked')].map(input => input.value);
@@ -226,6 +228,7 @@ function addDialogProduct() {
   openDrawer();
 }
 
+// redesenha os itens e os valores do pedido
 function renderCart() {
   const cart = loadCart();
   const count = cartCount(cart);
