@@ -8,11 +8,13 @@ const SITE_CONFIG = Object.freeze({
   hours: 'Seg, ter e qui–dom · 18h às 00h · quarta fechado'
 });
 
+// acrescimos disponiveis para os lanches
 const EXTRA_OPTIONS = Object.freeze([
   { id: 'ovo-extra', name: 'Ovo', price: 3 },
   { id: 'hamburguer-extra', name: 'Carne de hambúrguer', price: 3 }
 ]);
 
+// lista de produtos separada por categoria
 const MENU = Object.freeze([
   {
     category: 'Hambúrgueres',
@@ -62,6 +64,7 @@ const MENU = Object.freeze([
   }
 ]);
 
+// junta os produtos de todas as categorias em uma lista
 function allProducts() {
   return MENU.flatMap(group => group.products.map(product => ({ ...product, category: group.category })));
 }
