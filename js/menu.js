@@ -43,6 +43,7 @@ function cartCount(cart = loadCart()) {
   return cart.reduce((sum, item) => sum + item.qty, 0);
 }
 
+// cria elementos sem precisar usar innerHTML
 function el(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -50,6 +51,7 @@ function el(tag, className, text) {
   return node;
 }
 
+// monta os botoes que levam ate cada categoria
 function renderCategories() {
   const wrap = document.querySelector('[data-category-list]');
   if (!wrap) return;
@@ -105,6 +107,7 @@ function createProductCard(product) {
   return article;
 }
 
+// cria as secoes usando os produtos de data.js
 function renderMenu() {
   const wrap = document.querySelector('[data-menu-groups]');
   if (!wrap) return;
