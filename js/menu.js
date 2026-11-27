@@ -55,6 +55,7 @@ function el(tag, className, text) {
 function renderCategories() {
   const wrap = document.querySelector('[data-category-list]');
   if (!wrap) return;
+  wrap.replaceChildren();
 
   MENU.forEach((group, index) => {
     const button = el('button', index === 0 ? 'category-chip active' : 'category-chip', group.category);
@@ -111,6 +112,7 @@ function createProductCard(product) {
 function renderMenu() {
   const wrap = document.querySelector('[data-menu-groups]');
   if (!wrap) return;
+  wrap.replaceChildren();
 
   MENU.forEach((group, index) => {
     const section = el('section', 'menu-group');
