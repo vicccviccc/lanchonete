@@ -17,5 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   });
 
+  // permite fechar o menu sem precisar usar o mouse
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) {
+      close();
+      toggle.focus();
+    }
+  });
+
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
 });
